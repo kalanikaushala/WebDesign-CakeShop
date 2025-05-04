@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sweet Cake</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+        .menu-category {
+            margin-bottom: 50px;
+        }
+        .menu-category h2 {
+            text-align: center;
+            font-size: 30px;
+            font-family: sans-serif;
+            color: #000000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #f55ab2;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .menu-grid {
+            display: flex; /* Flex layout for consistent alignment */
+            flex-wrap: wrap; /* Allow wrapping of items */
+            gap: 20px; /* Add spacing between items */
+            justify-content: center; /* Center items horizontally */
+        }
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+            max-width: calc(33.333% - 20px); /* Limit width */
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .menu-item-content {
+            padding: 15px;
+            text-align: center;
+        }
+        .menu-item-content h3 {
+            font-size: 25px;
+            font-family: serif;
+            color:rgb(92, 42, 6);
+            margin-bottom: 10px;
+        }
+        .menu-item-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .menu-item-content .price {
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--primary-color); /* Match the primary color */
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .menu-item-content .order-btn {
+            background-color: var(--primary-color); /* Use the same primary color as the index page */
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px; /* Rounded button design */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .menu-item-content .order-btn:hover {
+            background-color: var(--primary-hover-color); /* Hover color from the index page */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        @media (max-width: 768px) {
+            .menu-item {
+                flex: 1 1 calc(50% - 20px); /* Two items per row on smaller screens */
+                max-width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .menu-item {
+                flex: 1 1 100%; /* One item per row on very small screens */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Same navbar as index.html -->
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Our Menu</h1>
+            <p>Discover our delicious cake collection</p>
+        </section>
+
+        <section class="menu-section">
+            
+
+           
+
+            <div id="birthday-cakes" class="menu-category">
+                <h2>Birthday Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="birthday">
+                        <img src="images/birthday-cake1.png" alt="Chocolate Birthday Cake">
+                        <div class="menu-item-content">
+                            <h3>Chocolate Birthday Cake</h3>
+                            <p>Rich chocolate layers with cream filling</p>
+                            <span class="price">Rs.2000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="birthday">
+                        <img src="images/birthday-cake2.png" alt="Rainbow Birthday Cake">
+                        <div class="menu-item-content">
+                            <h3>Rainbow Birthday Cake</h3>
+                            <p>Colorful layers with vanilla buttercream</p>
+                            <span class="price">Rs.3500</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="birthday">
+                        <img src="images/birthday-cake3.png" alt="Unicorn Birthday Cake">
+                        <div class="menu-item-content">
+                            <h3>Unicorn Fantasy Cake</h3>
+                            <p>Magical themed cake with rainbow colors</p>
+                            <span class="price">Rs.4000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wedding-cakes" class="menu-category">
+                <h2>Wedding Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="wedding">
+                        <img src="images/wedding-cake1.png" alt="Classic Wedding Cake">
+                        <div class="menu-item-content">
+                            <h3>Elegant Three-Tier</h3>
+                            <p>white fondant with floral details</p>
+                            <span class="price">Rs.20000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="wedding">
+                        <img src="images/wedding-cake2.png" alt="Modern Wedding Cake">
+                        <div class="menu-item-content">
+                            <h3>Modern Marble</h3>
+                            <p>Marble effect with gold accents</p>
+                            <span class="price">Rs.30000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="wedding">
+                        <img src="images/wedding-cake3.png" alt="Rustic Wedding Cake">
+                        <div class="menu-item-content">
+                            <h3>Rustic Romance</h3>
+                            <p>Semi-naked cake with fresh flowers</p>
+                            <span class="price">Rs.15000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cupcakes" class="menu-category">
+                <h2>Cup Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="cupcakes">
+                        <img src="images/cupcake1.png" alt="Classic Cupcakes">
+                        <div class="menu-item-content">
+                            <h3>Classic Dozen</h3>
+                            <p>Assorted flavors with buttercream frosting</p>
+                            <span class="price">Rs.300</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="cupcakes">
+                        <img src="images/cupcake2.png" alt="Special Cupcakes">
+                        <div class="menu-item-content">
+                            <h3>Luxury Collection</h3>
+                            <p>Premium flavors with specialty toppings</p>
+                            <span class="price">Rs.250</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="cupcakes">
+                        <img src="images/cupcake3.png" alt="Mini Cupcakes">
+                        <div class="menu-item-content">
+                            <h3>Mini Delights</h3>
+                            <p>24 bite-sized cupcakes with mixed flavors</p>
+                            <span class="price">Rs.200</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fruit-cakes" class="menu-category">
+                <h2>Fruit Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="fruit">
+                        <img src="images/fruit-cake1.png" alt="Mixed Fruit Cake">
+                        <div class="menu-item-content">
+                            <h3>Tropical Delight</h3>
+                            <p>Fresh mixed fruits with light cream</p>
+                            <span class="price">Rs.3500</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="fruit">
+                        <img src="images/fruit-cake2.png" alt="Berry Cake">
+                        <div class="menu-item-content">
+                            <h3>Berry Bliss</h3>
+                            <p>Assorted berries with whipped cream</p>
+                            <span class="price">Rs.4500</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="fruit">
+                        <img src="images/fruit-cake3.png" alt="Mango Cake">
+                        <div class="menu-item-content">
+                            <h3>Mango Tango</h3>
+                            <p>Fresh mango layers & cream cheese</p>
+                            <span class="price">Rs.2999</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="special-cakes" class="menu-category">
+                <h2>Special Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="special">
+                        <img src="images/special-cake1.png" alt="Theme Cake">
+                        <div class="menu-item-content">
+                            <h3>Custom Theme Cake</h3>
+                            <p>Personalized design of your choice</p>
+                            <span class="price">Rs.4999</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="special">
+                        <img src="images/special-cake2.png" alt="Anniversary Cake">
+                        <div class="menu-item-content">
+                            <h3>Golden Anniversary</h3>
+                            <p>Luxurious gold-themed cake</p>
+                            <span class="price">Rs.5500</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="special">
+                        <img src="images/special-cake3.png" alt="Graduation Cake">
+                        <div class="menu-item-content">
+                            <h3>Graduation Glory</h3>
+                            <p>Academic themed celebration cake</p>
+                            <span class="price">Rs.6000</span>
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Sweet Cake</h3>
+                <p>Making your special moments sweeter with our delicious cakes.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@sweetcake.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Cake Street, Bakery Town</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Opening Hours</h4>
+                <ul>
+                    <li>Monday - Friday: 8AM - 8PM</li>
+                    <li>Saturday: 9AM - 7PM</li>
+                    <li>Sunday: 10AM - 6PM</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
